@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MBA | هفته اول - مبانی کسب‌وکار</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #14243b;
+      --blue: #245b86;
+      --cyan: #25b6b0;
+      --gold: #e6b65c;
+      --ink: #263447;
+      --muted: #718096;
+      --paper: #ffffff;
+      --bg: #f2f5f9;
+      --line: #e5eaf0;
+      --soft: #eaf7f6;
+      --shadow: 0 12px 35px rgba(20,36,59,.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Vazirmatn", sans-serif;
+      line-height: 1.95;
+    }
+
+    .container {
+      width: min(1060px, 92%);
+      margin: 38px auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 58px 48px;
+      border-radius: 26px;
+      color: white;
+      background: linear-gradient(125deg, #14243b 0%, #204e70 62%, #168e91 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "01";
+      position: absolute;
+      left: 28px;
+      bottom: -70px;
+      font-size: 250px;
+      line-height: 1;
+      font-weight: 800;
+      color: rgba(255,255,255,.055);
+      direction: ltr;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 5px 14px;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 30px;
+      color: #c8f4ed;
+      font-size: 13px;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin: 22px 0 10px;
+      font-size: clamp(27px, 4vw, 42px);
+      line-height: 1.55;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: #d8e7f0;
+      margin: 0;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .hero-meta span {
+      padding: 7px 13px;
+      background: rgba(255,255,255,.12);
+      border-radius: 9px;
+      font-size: 13px;
+    }
+
+    .section {
+      margin-top: 25px;
+      padding: 30px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(20,36,59,.035);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 20px;
+      color: var(--navy);
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    .section-title .number {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      border-radius: 11px;
+      color: white;
+      background: var(--blue);
+      font-size: 15px;
+    }
+
+    .intro {
+      padding: 19px 22px;
+      border-right: 4px solid var(--cyan);
+      border-radius: 12px;
+      background: var(--soft);
+      color: #245b61;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .mini-card {
+      padding: 17px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .mini-card strong {
+      display: block;
+      color: var(--blue);
+      margin-bottom: 5px;
+    }
+
+    .muted { color: var(--muted); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 13px 15px;
+      text-align: right;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      background: #edf3f8;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .formula {
+      direction: ltr;
+      text-align: center;
+      padding: 13px;
+      margin: 12px 0;
+      border-radius: 10px;
+      background: #f0f5fa;
+      color: #174d70;
+      font-family: monospace;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .metric {
+      padding: 16px 10px;
+      text-align: center;
+      border-radius: 13px;
+      background: #f4f8fb;
+    }
+
+    .metric b {
+      display: block;
+      color: var(--blue);
+      font-size: 23px;
+      direction: ltr;
+    }
+
+    .metric small { color: var(--muted); }
+
+    .steps {
+      padding: 0;
+      list-style: none;
+      counter-reset: step;
+    }
+
+    .steps li {
+      position: relative;
+      padding: 9px 44px 9px 0;
+      counter-increment: step;
+    }
+
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      right: 0;
+      top: 10px;
+      display: grid;
+      place-items: center;
+      width: 27px;
+      height: 27px;
+      border-radius: 50%;
+      background: var(--soft);
+      color: #138b87;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      cursor: pointer;
+    }
+
+    .check input {
+      width: 18px;
+      height: 18px;
+      margin-top: 5px;
+      accent-color: var(--cyan);
+    }
+
+    .check:has(input:checked) {
+      background: #effaf7;
+      color: #478078;
+    }
+
+    .vocab td:first-child {
+      direction: ltr;
+      text-align: left;
+      font-weight: 600;
+      color: var(--blue);
+    }
+
+    .quote {
+      padding: 24px;
+      border-radius: 15px;
+      background: var(--navy);
+      color: white;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .quote small {
+      display: block;
+      margin-top: 9px;
+      color: #b9d6e5;
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    .footer {
+      padding: 28px 10px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media(max-width:700px) {
+      .container { width: 94%; margin: 15px auto; }
+      .hero { padding: 36px 24px; }
+      .section { padding: 21px 17px; }
+      .grid, .checklist { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      table { font-size: 12px; }
+      th, td { padding: 10px 8px; }
+    }
+
+    @media print {
+      body { background: white; }
+      .container { width: 100%; margin: 0; }
+      .hero, .section { box-shadow: none; break-inside: avoid; }
+      .section { border: 1px solid #ddd; }
+      .check input { print-color-adjust: exact; }
+    }
+  </style>
+</head>
+
+<body>
+<main class="container">
+
+  <header class="hero">
+    <span class="eyebrow">MBA SELF-STUDY · TERM 01</span>
+    <h1>هفته اول: مبانی کسب‌وکار و ذهنیت کارآفرینی</h1>
+    <p>
+      از شناخت مسئله واقعی مشتری تا تشخیص یک فرصت اقتصادی؛
+      اولین قدم برای ساخت یک کسب‌وکار فناوری و هوش مصنوعی.
+    </p>
+    <div class="hero-meta">
+      <span>⏱ حدود ۱۶ ساعت مطالعه</span>
+      <span>🎯 تمرکز: کارآفرینی و AI</span>
+      <span>📚 سطح: مبانی</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2 class="section-title"><span class="number">۱</span> اهداف یادگیری</h2>
+    <div class="grid">
+      <div class="mini-card"><strong>درک کسب‌وکار</strong>شناخت اجزا و منطق اقتصادی یک کسب‌وکار.</div>
+      <div class="mini-card"><strong>تشخیص فرصت</strong>تمایز میان ایده جذاب و فرصت واقعی بازار.</div>
+      <div class="mini-card"><strong>شناخت مشتری</strong>تعریف مشتری هدف و مسئله‌ای که تجربه می‌کند.</div>
+      <div class="mini-card"><strong>تحلیل اقتصادی</strong>درک درآمد، هزینه، حاشیه سود و نقطه سربه‌سر.</div>
+      <div class="mini-card"><strong>مدل کسب‌وکار</strong>آشنایی با روش‌های مختلف درآمدزایی.</div>
+      <div class="mini-card"><strong>اعتبارسنجی</strong>آماده‌سازی فرضیه‌های اولیه برای آزمون در بازار.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="number">۲</span> کسب‌وکار چیست؟</h2>
+    <div class="intro">
+      کسب‌وکار سیستمی است که یک مسئله واقعی را شناسایی می‌کند،
+      برای مشتری ارزش ایجاد می‌کند، آن ارزش را تحویل می‌دهد
+      و در ازای آن درآمد کسب می‌کند.
+    </div>
+    <div class="formula">Problem → Value → Customer → Revenue → Sustainable Business</div>
+    <p>ساخت یک محصول به‌تنهایی به معنی ساخت یک کسب‌وکار نیست. باید مشتری، نیاز، تمایل به پرداخت و هزینه ارائه راه‌حل نیز مشخص باشند.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="number">۳</span> ایده در برابر فرصت کسب‌وکار</h2>
+    <table>
+      <thead><tr><th>ایده</th><th>فرصت کسب‌وکار</th></tr></thead>
+      <tbody>
+        <tr><td>یک تصور یا راه‌حل اولیه</td><td>مسئله واقعی با مشتری مشخص</td></tr>
+        <tr><td>جذابیت احتمالی</td><td>شواهدی از نیاز بازار</td></tr>
+        <tr><td>مشتری نامشخص</td><td>مشتری هدف مشخص</td></tr>
+        <tr><td>درآمد فرضی</td><td>امکان درآمدزایی قابل بررسی</td></tr>
+        <tr><td>امکان‌پذیری نامعلوم</td><td>ارزیابی اولیه اجرا و اقتصاد</td></tr>
+      </tbody>
+    </table>
+    <p><strong>پرسش کلیدی:</strong> آیا مشتری برای حل این مسئله حاضر است پول یا زمان پرداخت کند؟</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="number">۴</span> پنج جزء اصلی کسب‌وکار</h2>
+    <div class="grid">
+      <div class="mini-card"><strong>Customer</strong>چه کسی مشکل را تجربه می‌کند؟</div>
+      <div class="mini-card"><strong>Value Proposition</strong>چرا راه‌حل ما برای او مفید است؟</div>
+      <div class="mini-card"><strong>Revenue Model</strong>چگونه پول دریافت می‌کنیم؟</div>
+      <div class="mini-card"><strong>Cost Structure</strong>ارائه محصول چقدر هزینه دارد؟</div>
+      <div class="mini-card"><strong>Competitive Advantage</strong>چرا مشتری ما را انتخاب می‌کند؟</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="number">۵</span> مدل‌های رایج کسب‌وکار</h2>
+    <table>
+      <thead><tr><th>مدل</th><th>روش درآمدزایی</th><th>نمونه</th></tr></thead>
+      <tbody>
+        <tr><td>Subscription</td><td>پرداخت دوره‌ای</td><td>نرم‌افزار اشتراکی</td></tr>
+        <tr><td>Transaction Fee</td><td>کارمزد تراکنش</td><td>بازارگاه‌ها</td></tr>
+        <tr><td>SaaS</td><td>فروش دسترسی نرم‌افزاری</td><td>نرم‌افزار سازمانی</td></tr>
+        <tr><td>Advertising</td><td>درآمد تبلیغاتی</td><td>پلتفرم محتوایی</td></tr>
+        <tr><td>Marketplace</td><td>اتصال خریدار و فروشنده</td><td>بازارگاه خدمات</td></tr>
+        <tr><td>Usage-based</td><td>پرداخت بر اساس مصرف</td><td>AI API</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="number">۶</span> تمرین مالی: کسب‌وکار AI SaaS</h2>
+    <p>فرض کنید یک سرویس هوش مصنوعی برای شرکت‌ها دارید:</p>
+    <div class="grid">
+      <div class="mini-card">تعداد مشتری<strong>۱۰۰ مشتری</strong></div>
+      <div class="mini-card">درآمد هر مشتری<strong>۳۰ یورو در ماه</strong></div>
+      <div class="mini-card">هزینه متغیر هر مشتری<strong>۸ یورو</strong></div>
+      <div class="mini-card">هزینه ثابت ماهانه<strong>۱٬۰۰۰ یورو</strong></div>
+    </div>
+    <div class="metrics">
+      <div class="metric"><b>€3,000</b><small>درآمد ماهانه</small></div>
+      <div class="metric"><b>€800</b><small>هزینه متغیر</small></div>
+      <div class="metric"><b>€1,200</b><small>سود ساده‌شده</small></div>
+      <div class="metric"><b>73.3%</b><small>حاشیه سود ناخالص</small></div>
+    </div>
+    <h3>محاسبات مهم</h3>
+    <div class="formula">Revenue = 100 × €30 = €3,000</div>
+    <div class="formula">Gross Margin = (30 − 8) ÷ 30 = 73.3%</div>
+    <div class="formula">Break-even = 1,000 ÷ (30 − 8) ≈ 46 customers</div>
+    <p class="muted">این مثال ساده‌شده است و مالیات، استهلاک، هزینه جذب مشتری و سایر هزینه‌های احتمالی را لحاظ نمی‌کند.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="number">۷</span> مطالعه موردی: OpenAI</h2>
+    <p>یک شرکت فناوری را با پرسش‌های زیر تحلیل کنید:</p>
+    <ol class="steps">
+      <li>مشتریان اصلی چه کسانی هستند؟</li>
+      <li>چه ارزشی از محصولات و API دریافت می‌کنند؟</li>
+      <li>مدل‌های درآمدی شرکت چیست؟</li>
+      <li>مهم‌ترین هزینه‌های عملیاتی کدام‌اند؟</li>
+      <li>رقبای اصلی چه کسانی هستند؟</li>
+      <li>مزیت رقابتی شرکت از کجا می‌آید؟</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="number">۸</span> کارگاه عملی: شکار مسئله</h2>
+    <div class="intro">
+      مأموریت: ۱۰ مسئله واقعی پیدا کنید که فناوری یا هوش مصنوعی
+      بتواند در حل آن‌ها کمک کند. فعلاً محصول نسازید؛ ابتدا مسئله را بشناسید.
+    </div>
+    <h3>معیارهای امتیازدهی از ۱ تا ۵</h3>
+    <ul>
+      <li>شدت و تکرار مشکل</li>
+      <li>تعداد مشتریان بالقوه</li>
+      <li>تمایل مشتری به پرداخت</li>
+      <li>امکان‌پذیری فنی و اجرایی</li>
+      <li>امکان ایجاد مزیت رقابتی</li>
+      <li>قابلیت توسعه بین‌المللی</li>
+    </ul>
+    <h3>برای سه مسئله برتر پاسخ دهید:</h3>
+    <ol class="steps">
+      <li>مشتری هدف دقیقاً چه کسی است؟</li>
+      <li>اکنون چگونه مشکل را حل می‌کند؟</li>
+      <li>راه‌حل‌های فعلی چه کمبودی دارند؟</li>
+      <li>چرا ممکن است برای راه‌حل بهتر پول پرداخت کند؟</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="number">۹</span> برنامه مطالعاتی هفتگی</h2>
+    <table>
+      <thead><tr><th>روز</th><th>فعالیت</th><th>زمان</th></tr></thead>
+      <tbody>
+        <tr><td>شنبه</td><td>درس اصلی: مبانی کسب‌وکار</td><td>۲.۵ ساعت</td></tr>
+        <tr><td>یکشنبه</td><td>مرور و تکمیل مفاهیم</td><td>۲ ساعت</td></tr>
+        <tr><td>دوشنبه</td><td>مطالعه کتاب و منابع</td><td>۲ ساعت</td></tr>
+        <tr><td>سه‌شنبه</td><td>تمرین‌های تحلیلی و مالی</td><td>۲.۵ ساعت</td></tr>
+        <tr><td>چهارشنبه</td><td>مطالعه موردی OpenAI</td><td>۲.۵ ساعت</td></tr>
+        <tr><td>پنجشنبه</td><td>پروژه عملی و شناسایی فرصت‌ها</td><td>۳ ساعت</td></tr>
+        <tr><td>جمعه</td><td>آزمون و مرور هفتگی</td><td>۱.۵ ساعت</td></tr>
+        <tr><th colspan="2">مجموع</th><th>۱۶ ساعت</th></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="number">۱۰</span> منابع پیشنهادی</h2>
+    <ul>
+      <li><strong>کتاب:</strong> The Personal MBA — Josh Kaufman</li>
+      <li><strong>دوره:</strong> MIT OpenCourseWare — Entrepreneurship 101: Who Is Your Customer?</li>
+      <li><strong>منبع تکمیلی:</strong> Stanford eCorner — Entrepreneurship Resources</li>
+    </ul>
+    <p class="muted">تمرکز مطالعاتی: شناخت مشتری، ارزش پیشنهادی و مدل درآمدی.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="number">۱۱</span> واژگان کلیدی</h2>
+    <table class="vocab">
+      <tbody>
+        <tr><td>Business Model</td><td>مدل کسب‌وکار</td></tr>
+        <tr><td>Value Proposition</td><td>ارزش پیشنهادی</td></tr>
+        <tr><td>Customer Segment</td><td>بخش مشتریان</td></tr>
+        <tr><td>Revenue</td><td>درآمد</td></tr>
+        <tr><td>Cost Structure</td><td>ساختار هزینه</td></tr>
+        <tr><td>Gross Margin</td><td>حاشیه سود ناخالص</td></tr>
+        <tr><td>Break-even Point</td><td>نقطه سربه‌سر</td></tr>
+        <tr><td>Customer Discovery</td><td>کشف مشتری</td></tr>
+        <tr><td>Validation</td><td>اعتبارسنجی</td></tr>
+        <tr><td>Competitive Advantage</td><td>مزیت رقابتی</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="number">۱۲</span> آزمون پایان هفته</h2>
+    <ol class="steps">
+      <li>چرا یک ایده جذاب الزاماً فرصت کسب‌وکار نیست؟</li>
+      <li>پنج جزء اصلی یک کسب‌وکار را نام ببرید.</li>
+      <li>تفاوت Subscription و Usage-based چیست؟</li>
+      <li>اگر درآمد هر مشتری ۳۰ یورو و هزینه متغیر او ۸ یورو باشد، حاشیه سود ناخالص چند درصد است؟</li>
+      <li>با هزینه ثابت ۱٬۰۰۰ یورو، نقطه سربه‌سر چند مشتری است؟</li>
+      <li>چرا اعتبارسنجی مسئله باید پیش از ساخت محصول انجام شود؟</li>
+      <li>یک مزیت رقابتی پایدار برای کسب‌وکار AI SaaS چه می‌تواند باشد؟</li>
+    </ol>
+    <p class="muted">پاسخ‌ها را ابتدا بدون مراجعه به منابع بنویسید؛ سپس پاسخ‌های خود را بررسی کنید.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="number">✓</span> چک‌لیست تحویل هفته اول</h2>
+    <p class="muted">با انجام هر فعالیت، مربع مربوط به آن را علامت بزنید.</p>
+    <div class="checklist">
+      <label class="check"><input type="checkbox"> فهرست ۱۰ مسئله واقعی</label>
+      <label class="check"><input type="checkbox"> امتیازدهی و رتبه‌بندی مسئله‌ها</label>
+      <label class="check"><input type="checkbox"> انتخاب ۳ فرصت برتر</label>
+      <label class="check"><input type="checkbox"> تعریف مشتری هدف هر فرصت</label>
+      <label class="check"><input type="checkbox"> بررسی راه‌حل فعلی مشتری</label>
+      <label class="check"><input type="checkbox"> فرضیه تمایل به پرداخت</label>
+      <label class="check"><input type="checkbox"> پاسخ به آزمون پایان هفته</label>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="quote">
+      معیار موفقیت هفته اول: پیدا کردن یک مسئله واقعی، مشتری مشخص و فرصت اقتصادی قابل بررسی؛ نه صرفاً داشتن یک ایده جذاب.
+      <small>هفته آینده: مدل‌های کسب‌وکار و Business Model Canvas</small>
+    </div>
+  </section>
+
+  <footer class="footer">
+    MBA Self-Study Program · Entrepreneurship & AI Business
+    <br>
+    هفته اول از مسیر ۲۴ ماهه یادگیری
+  </footer>
+
+</main>
+</body>
+</html>

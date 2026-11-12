@@ -1,0 +1,717 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10172a">
+  <title>MBA اختصاصی | Entrepreneurship & AI Business</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+
+    :root {
+      --navy: #10172a;
+      --navy-light: #1b2742;
+      --purple: #7557e8;
+      --cyan: #39c6d8;
+      --ink: #202b43;
+      --muted: #69758b;
+      --surface: #ffffff;
+      --background: #f3f5fb;
+      --border: #e7eaf2;
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--ink);
+      font-family: "Vazirmatn", Tahoma, sans-serif;
+      line-height: 1.9;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 75px 0 65px;
+      color: white;
+      background:
+        radial-gradient(circle at 15% 15%, #7359d9 0, transparent 32%),
+        radial-gradient(circle at 85% 90%, #146c8a 0, transparent 30%),
+        linear-gradient(135deg, #10172a, #1d2c4d);
+    }
+
+    .hero::after {
+      content: "AI";
+      position: absolute;
+      left: 5%;
+      top: 8%;
+      font-size: 220px;
+      font-weight: 800;
+      color: rgba(255,255,255,.035);
+      direction: ltr;
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 5px 15px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 50px;
+      color: #b9eefa;
+      font-size: 13px;
+      letter-spacing: .5px;
+    }
+
+    h1 {
+      font-size: clamp(35px, 6vw, 58px);
+      line-height: 1.35;
+      margin: 22px 0 5px;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      color: #c8d5ec;
+      font-size: clamp(16px, 2.5vw, 21px);
+      direction: ltr;
+      text-align: right;
+    }
+
+    .hero-description {
+      max-width: 760px;
+      color: #e1e8f6;
+      margin-top: 25px;
+      font-size: 16px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .hero-tags span {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 10px;
+      padding: 7px 13px;
+      font-size: 13px;
+    }
+
+    main { padding: 45px 0 75px; }
+
+    .section { margin-bottom: 48px; }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-heading .number {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      flex: 0 0 43px;
+      border-radius: 13px;
+      color: white;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--purple), #9b73ef);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 23px;
+      color: var(--navy);
+    }
+
+    .section-caption {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 1px;
+    }
+
+    .intro-card {
+      padding: 26px 30px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 28px rgba(25,40,80,.045);
+    }
+
+    .intro-card p { margin: 0; }
+
+    .highlight {
+      border-right: 4px solid var(--purple);
+      background: #f2efff;
+      border-radius: 12px 0 0 12px;
+      padding: 16px 20px;
+      margin-top: 20px;
+      color: #49358e;
+      font-weight: 600;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .stat {
+      padding: 20px 16px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      text-align: center;
+    }
+
+    .stat .value {
+      display: block;
+      color: var(--purple);
+      font-size: 23px;
+      font-weight: 800;
+      direction: ltr;
+    }
+
+    .stat .label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .info-item {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 15px 18px;
+      border-radius: 14px;
+    }
+
+    .info-item small {
+      color: var(--muted);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .info-item strong { color: var(--navy); }
+
+    .changes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 17px;
+    }
+
+    .change-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .change-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(25,40,80,.08);
+    }
+
+    .change-card .icon {
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .change-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 17px;
+    }
+
+    .change-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 10px;
+    }
+
+    .change-card ul {
+      padding-right: 19px;
+      margin: 10px 0;
+      font-size: 13px;
+    }
+
+    .goal {
+      display: block;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      color: #6248c2;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 580px;
+    }
+
+    th {
+      background: var(--navy);
+      color: white;
+      padding: 15px;
+      text-align: right;
+      font-size: 14px;
+    }
+
+    td {
+      padding: 15px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: #f8f7ff; }
+
+    .term {
+      color: #6248c2;
+      font-weight: 700;
+      direction: ltr;
+      display: inline-block;
+    }
+
+    .month {
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    .project {
+      padding: 32px;
+      border-radius: 23px;
+      color: white;
+      background:
+        radial-gradient(circle at 95% 10%, rgba(57,198,216,.2), transparent 35%),
+        linear-gradient(135deg, #17213a, #26365a);
+    }
+
+    .project h2 { color: white; }
+
+    .project > p { color: #d4def0; }
+
+    .project ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 25px;
+      padding-right: 20px;
+      color: #edf2ff;
+      font-size: 14px;
+    }
+
+    .quote {
+      border-right: 4px solid var(--cyan);
+      padding: 13px 18px;
+      margin: 22px 0;
+      background: rgba(255,255,255,.07);
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .final-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .final-item {
+      padding: 14px 17px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      font-size: 14px;
+    }
+
+    .footer {
+      padding: 25px 0;
+      background: var(--navy);
+      color: #b8c5dc;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .footer strong { color: white; }
+
+    @media (max-width: 760px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .changes-grid, .info-grid, .final-grid { grid-template-columns: 1fr; }
+      .project ul { grid-template-columns: 1fr; }
+      .hero { padding: 55px 0 45px; }
+      .intro-card, .project { padding: 22px; }
+    }
+
+    @media print {
+      body { background: white; }
+      .hero, .project, th, .footer {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      .change-card, .stat, .info-item { break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="eyebrow">PERSONALIZED MBA PROGRAM · 2026–2028</span>
+    <h1>🎓 MBA اختصاصی من</h1>
+    <div class="subtitle">Entrepreneurship, Technology &amp; AI Business</div>
+
+    <p class="hero-description">
+      یک مسیر آموزشی و عملی برای تبدیل دانش مدیریتی و تجربه فنی
+      به توانایی ساخت، مدیریت و توسعه کسب‌وکارهای واقعی در حوزه
+      فناوری و هوش مصنوعی.
+    </p>
+
+    <div class="hero-tags">
+      <span>۲۴ ماه آموزش</span>
+      <span>۱۶ ساعت در هفته</span>
+      <span>فارسی + English</span>
+      <span>پروژه واقعی</span>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="section">
+    <div class="section-heading">
+      <div class="number">01</div>
+      <div>
+        <h2>چشم‌انداز آموزشی</h2>
+        <div class="section-caption">The Entrepreneurial Mindset</div>
+      </div>
+    </div>
+
+    <div class="intro-card">
+      <p>
+        این برنامه صرفاً یک MBA عمومی نیست؛ هدف آن پرورش یک
+        <strong>بنیان‌گذار کسب‌وکار (Entrepreneur)</strong> است که
+        بتواند فرصت‌های واقعی بازار را کشف کند، محصولات ارزشمند بسازد،
+        مشتری جذب کند و یک شرکت فناوری یا هوش مصنوعی را توسعه دهد.
+      </p>
+      <div class="highlight">
+        اصل راهبردی: به‌جای ساخت محصول بر اساس حدس و علاقه شخصی،
+        ابتدا مسئله واقعی مشتری را پیدا می‌کنیم و سپس راه‌حل را اعتبارسنجی می‌کنیم.
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div class="number">02</div>
+      <div>
+        <h2>مشخصات برنامه</h2>
+        <div class="section-caption">Program at a Glance</div>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat">
+        <span class="value">24</span>
+        <span class="label">ماه آموزشی</span>
+      </div>
+      <div class="stat">
+        <span class="value">16h</span>
+        <span class="label">مطالعه هفتگی</span>
+      </div>
+      <div class="stat">
+        <span class="value">8</span>
+        <span class="label">دوره تخصصی</span>
+      </div>
+      <div class="stat">
+        <span class="value">104</span>
+        <span class="label">هفته پروژه محوری</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div class="number">03</div>
+      <div>
+        <h2>مشخصات آموزشی اختصاصی</h2>
+        <div class="section-caption">Personalized Learning Design</div>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <small>عنوان دوره</small>
+        <strong>MBA – Entrepreneurship &amp; AI Business</strong>
+      </div>
+      <div class="info-item">
+        <small>مسیر تخصصی</small>
+        <strong>کارآفرینی فناوری و هوش مصنوعی</strong>
+      </div>
+      <div class="info-item">
+        <small>زبان آموزش</small>
+        <strong>فارسی + اصطلاحات تخصصی انگلیسی</strong>
+      </div>
+      <div class="info-item">
+        <small>زبان منابع</small>
+        <strong>عمدتاً انگلیسی با توضیحات فارسی</strong>
+      </div>
+      <div class="info-item">
+        <small>ریاضی و آمار</small>
+        <strong>از پایه تا سطح کاربردی مدیریتی</strong>
+      </div>
+      <div class="info-item">
+        <small>حوزه تخصصی</small>
+        <strong>Technology, AI &amp; Digital Business</strong>
+      </div>
+      <div class="info-item">
+        <small>مدت و زمان</small>
+        <strong>۲۴ ماه · حدود ۱۶ ساعت در هفته</strong>
+      </div>
+      <div class="info-item">
+        <small>پروژه محوری</small>
+        <strong>ساخت و اعتبارسنجی کسب‌وکار واقعی</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div class="number">04</div>
+      <div>
+        <h2>پنج تغییر اصلی در برنامه</h2>
+        <div class="section-caption">The Five Strategic Learning Tracks</div>
+      </div>
+    </div>
+
+    <div class="changes-grid">
+
+      <article class="change-card">
+        <div class="icon">📐</div>
+        <h3>۱. تقویت ریاضی و آمار</h3>
+        <p>یادگیری ابزارهای کمی برای تصمیم‌گیری مدیریتی مبتنی بر داده.</p>
+        <ul>
+          <li>Probability &amp; Statistics</li>
+          <li>Data Analysis</li>
+          <li>Forecasting &amp; Regression</li>
+          <li>Applied Econometrics</li>
+        </ul>
+        <span class="goal">هدف: تصمیم‌گیری بر اساس داده و شواهد</span>
+      </article>
+
+      <article class="change-card">
+        <div class="icon">🤖</div>
+        <h3>۲. تمرکز بر هوش مصنوعی</h3>
+        <p>درک فناوری و اقتصاد واقعی کسب‌وکارهای مبتنی بر AI.</p>
+        <ul>
+          <li>AI Business Models</li>
+          <li>AI SaaS &amp; Automation</li>
+          <li>API Business Models</li>
+          <li>Infrastructure Economics</li>
+        </ul>
+        <span class="goal">هدف: شناخت فرصت‌ها و اقتصاد کسب‌وکار AI</span>
+      </article>
+
+      <article class="change-card">
+        <div class="icon">🔎</div>
+        <h3>۳. کارآفرینی از ماه اول</h3>
+        <p>کشف و اعتبارسنجی مسئله بازار پیش از توسعه محصول.</p>
+        <ul>
+          <li>Customer Discovery</li>
+          <li>Market Research</li>
+          <li>Customer Interviews</li>
+          <li>Opportunity Validation</li>
+        </ul>
+        <span class="goal">هدف: شناسایی فرصت واقعی و ارزشمند</span>
+      </article>
+
+      <article class="change-card">
+        <div class="icon">🛠️</div>
+        <h3>۴. طراحی و ساخت محصول</h3>
+        <p>تبدیل یک ایده معتبر به محصولی که مشتری حاضر به خرید آن باشد.</p>
+        <ul>
+          <li>MVP &amp; Product Validation</li>
+          <li>Product Design</li>
+          <li>Customer Acquisition</li>
+          <li>Go-to-Market &amp; Scaling</li>
+        </ul>
+        <span class="goal">هدف: ساخت محصول و ورود موفق به بازار</span>
+      </article>
+
+      <article class="change-card">
+        <div class="icon">💰</div>
+        <h3>۵. مدیریت مالی استارتاپ</h3>
+        <p>مدیریت سرمایه، هزینه‌ها و رشد مالی کسب‌وکار.</p>
+        <ul>
+          <li>Budgeting &amp; Burn Rate</li>
+          <li>Runway &amp; Unit Economics</li>
+          <li>CAC &amp; LTV</li>
+          <li>Fundraising &amp; Valuation</li>
+        </ul>
+        <span class="goal">هدف: مدیریت مالی هوشمندانه و پایدار</span>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div class="number">05</div>
+      <div>
+        <h2>ساختار برنامه ۲۴ماهه</h2>
+        <div class="section-caption">The Eight Learning Terms</div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>دوره</th>
+            <th>ماه‌ها</th>
+            <th>تمرکز آموزشی</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="term">🧱 Foundation</span></td>
+            <td class="month">۱–۳</td>
+            <td>مدیریت، اقتصاد، ریاضی و شناخت فرصت</td>
+          </tr>
+          <tr>
+            <td><span class="term">💰 Finance</span></td>
+            <td class="month">۴–۶</td>
+            <td>حسابداری، مالی و اقتصاد استارتاپ</td>
+          </tr>
+          <tr>
+            <td><span class="term">📈 Marketing</span></td>
+            <td class="month">۷–۹</td>
+            <td>بازاریابی، فروش، برندینگ و رشد محصول</td>
+          </tr>
+          <tr>
+            <td><span class="term">⚙️ Operations</span></td>
+            <td class="month">۱۰–۱۲</td>
+            <td>عملیات، محصول، فرایندها و مدیریت تیم</td>
+          </tr>
+          <tr>
+            <td><span class="term">♟️ Strategy</span></td>
+            <td class="month">۱۳–۱۵</td>
+            <td>استراتژی رقابتی و کسب‌وکار AI</td>
+          </tr>
+          <tr>
+            <td><span class="term">👥 Leadership</span></td>
+            <td class="month">۱۶–۱۸</td>
+            <td>رهبری، مذاکره و جذب استعداد</td>
+          </tr>
+          <tr>
+            <td><span class="term">🤖 Technology</span></td>
+            <td class="month">۱۹–۲۱</td>
+            <td>هوش مصنوعی، داده، محصول و سرمایه‌گذاری</td>
+          </tr>
+          <tr>
+            <td><span class="term">🚀 Venture Building</span></td>
+            <td class="month">۲۲–۲۴</td>
+            <td>راه‌اندازی و توسعه کسب‌وکار</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="project">
+      <div class="section-heading">
+        <div class="number">06</div>
+        <div>
+          <h2>پروژه محوری: ساخت یک کسب‌وکار واقعی</h2>
+          <div class="section-caption" style="color:#b8c8e5">
+            The 104-Week Venture Project
+          </div>
+        </div>
+      </div>
+
+      <p>
+        از هفته اول تا هفته ۱۰۴، یک پروژه محوری را به‌صورت مستمر توسعه می‌دهیم.
+        در پایان دوره، هدف داشتن یک فرصت واقعی اعتبارسنجی‌شده و یک طرح اجرایی
+        قابل اتکا برای راه‌اندازی کسب‌وکار است؛ نه صرفاً یک پروژه دانشگاهی فرضی.
+      </p>
+
+      <div class="quote">
+        از یک مسئله واقعی شروع می‌کنیم، با مشتری آن را اعتبارسنجی می‌کنیم
+        و سپس راه‌حل و مدل کسب‌وکار را می‌سازیم.
+      </div>
+
+      <ul>
+        <li>Problem &amp; Value Proposition</li>
+        <li>Target Customers</li>
+        <li>Market &amp; Competitor Analysis</li>
+        <li>Market Validation</li>
+        <li>MVP Design &amp; Testing</li>
+        <li>Revenue Model &amp; Cost Structure</li>
+        <li>Financial Plan &amp; Unit Economics</li>
+        <li>Go-to-Market Strategy</li>
+        <li>Execution Roadmap</li>
+        <li>Growth &amp; Scaling Plan</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div class="number">07</div>
+      <div>
+        <h2>چشم‌انداز نهایی</h2>
+        <div class="section-caption">Expected Learning Outcomes</div>
+      </div>
+    </div>
+
+    <div class="final-grid">
+      <div class="final-item">✓ ارزیابی فرصت‌های فناوری و AI</div>
+      <div class="final-item">✓ تحلیل بازار، مشتری و رقبا</div>
+      <div class="final-item">✓ تصمیم‌گیری مالی مبتنی بر داده</div>
+      <div class="final-item">✓ طراحی و اعتبارسنجی MVP</div>
+      <div class="final-item">✓ مدیریت تیم و عملیات کسب‌وکار</div>
+      <div class="final-item">✓ جذب مشتری و توسعه بازار</div>
+      <div class="final-item">✓ طراحی مدل درآمدی پایدار</div>
+      <div class="final-item">✓ آماده‌سازی برای راه‌اندازی کسب‌وکار</div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <strong>MBA | Entrepreneurship, Technology &amp; AI Business</strong>
+    <br>
+    ۲۴ ماه · حدود ۱۶ ساعت در هفته · یک پروژه واقعی
+    <br><br>
+    این برنامه خودآموز و پروژه‌محور است و مدرک رسمی یا اعتبار دانشگاهی MBA صادر نمی‌کند.
+  </div>
+</footer>
+
+</body>
+</html>
